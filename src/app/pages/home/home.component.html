@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div *ngFor="let post of posts" class="post-card">
+
+    <!-- TÍTULO -->
+    <h2 class="post-title">
+      <a [href]="post.link" target="_blank" rel="noopener">
+        <span [innerHTML]="post.title.rendered"></span>
+      </a>
+    </h2>
+
+    <!-- CONTEÚDO -->
+    <div class="post-content">
+
+      <!-- IMAGEM -->
+      <div class="post-image" *ngIf="post._embedded?.['wp:featuredmedia']">
+        <img 
+          [src]="post._embedded['wp:featuredmedia'][0].source_url"
+          alt="Imagem do post"
+        >
+      </div>
+
+      <!-- DESCRIÇÃO -->
+      <div class="post-description">
+        <p [innerHTML]="post.excerpt?.rendered || (post.content.rendered | slice:0:250) + '...'"></p>
+
+        <a class="read-more" 
+           [href]="post.link" 
+           target="_blank" 
+           rel="noopener">
+           Ler artigo completo →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
