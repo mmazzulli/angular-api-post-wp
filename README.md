@@ -1,29 +1,24 @@
-📘 Angular + WordPress API (Standalone v19)
+📘 Angular 19 + WordPress REST API
 
-Projeto desenvolvido com Angular Standalone (v19) consumindo dados da WordPress REST API, exibindo posts com:
+Projeto desenvolvido com Angular 19 (Standalone Components) consumindo dados da WordPress REST API, exibindo posts com layout moderno e responsivo.
 
-✅ Título (linkável para o post original)
+🚀 Funcionalidades
 
-✅ Imagem destacada
+✔ Listagem de posts via API
+✔ Título linkável para o post original
+✔ Imagem destacada
+✔ Exibição de resumo (excerpt ou conteúdo resumido)
+✔ Layout moderno com Flexbox
+✔ Design responsivo (mobile, tablet e desktop)
 
-✅ Descrição (excerpt ou resumo do conteúdo)
 
-✅ Layout moderno e responsivo
+🛠 Tecnologias Utilizadas
 
-✅ Estilização com Flexbox e Google Fonts
-
-🚀 Tecnologias Utilizadas
-
-Angular 19 (Standalone Components)
-
+Angular 19 (Standalone)
 Angular Router
-
-HttpClient
-
+Angular HttpClient
 WordPress REST API
-
 CSS3 (Flexbox)
-
 Google Fonts (Poppins)
 
 📂 Estrutura do Projeto
@@ -41,85 +36,58 @@ src/
      └── app.config.ts
 🔌 Integração com WordPress
 
-A aplicação consome os posts através da REST API padrão do WordPress:
+A aplicação consome os posts através da API padrão do WordPress:
 
 https://seusite.com/wp-json/wp/v2/posts?_embed&per_page=20
 Parâmetros utilizados:
 
 _embed → Permite acessar a imagem destacada
 
-per_page=20 → Define quantidade de posts retornados
+per_page=20 → Define a quantidade de posts retornados
+
 
 🧠 Arquitetura
-🔹 AppComponent
-
+AppComponent
 Responsável apenas por renderizar o <router-outlet>.
+HomeComponent
+Busca os posts via WpService
+Renderiza título, imagem e descrição
+Aplica layout responsivo
+WpService
+Realiza requisições HTTP
+Retorna os dados da API para o componente
 
-🔹 HomeComponent
 
-Responsável por:
-
-Buscar os posts via WpService
-
-Renderizar título, imagem e descrição
-
-Aplicar layout responsivo
-
-🔹 WpService
-
-Responsável por:
-
-Realizar requisições HTTP à API do WordPress
-
-Retornar os dados para o componente
-
-🎨 Layout e Estilização
-
-O layout utiliza:
-
-display: flex
-
-Cards com sombra suave
-
-Hover effects
-
-Responsividade com media queries
-
-Tipografia moderna com Google Fonts
+🎨 Layout
 
 Estrutura visual:
-
 [Título Linkável]
+[Imagem]   
+[Descrição do Post]
 
-[Imagem]   [Descrição do Post]
-
-Em dispositivos móveis:
+Em telas menores:
 
 [Título]
 [Imagem]
 [Descrição]
+
+
 📱 Responsividade
 
-Breakpoints aplicados:
-
+Breakpoints utilizados:
 1024px (tablet grande)
-
 768px (tablet)
-
 480px (mobile)
 
-O layout muda automaticamente para coluna em telas menores.
-
-🛠 Como Rodar o Projeto
+▶ Como Rodar o Projeto
 
 Instalar dependências:
-
 npm install
-
-Rodar o servidor:
+Rodar servidor de desenvolvimento:
 
 ng serve
-
-Acessar no navegador:
-
+Abrir no navegador:
 http://localhost:4200
+
+👨‍💻 Autor
+Projeto desenvolvido como estudo prático de integração Angular + WordPress API.
