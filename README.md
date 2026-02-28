@@ -21,20 +21,6 @@ WordPress REST API
 CSS3 (Flexbox)
 Google Fonts (Poppins)
 
-📂 Estrutura do Projeto
-src/
- └── app/
-     ├── pages/
-     │    └── home/
-     │         ├── home.component.ts
-     │         ├── home.component.html
-     │         └── home.component.css
-     ├── services/
-     │    └── wp.service.ts
-     ├── app.component.ts
-     ├── app.routes.ts
-     └── app.config.ts
-🔌 Integração com WordPress
 
 A aplicação consome os posts através da API padrão do WordPress:
 
